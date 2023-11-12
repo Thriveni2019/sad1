@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The Symphony of Resilience</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a quaint little town named Serenity, there lived a young girl named Lily. She had a heart as fragile as glass, having lost her parents at a tender age. Despite the sadness that clouded her life, Lily found solace in her love for music.
+
+Lily's days were spent at the local orphanage, where she would often escape into the enchanting world of melodies. The orphanage, though well-meaning, was a place filled with sorrow and longing. Lily's spirit, however, refused to be subdued.
+
+One day, a renowned musician named Mr. Harmon visited Serenity. Lily, with her eyes sparkling with hope, attended his concert. The symphony of the orchestra touched the depths of her soul, and in that moment, she decided to pursue her passion for music.
+
+Driven by her dreams, Lily started practicing tirelessly on an old piano she found in a dusty corner of the orphanage. However, life had more challenges in store for her. The orphanage faced financial difficulties, and the piano was sold to pay off debts. Lily felt as if her dreams were shattered.
+
+Determined not to give up, Lily started doing odd jobs around the town to save money. The townsfolk, moved by her perseverance, began to help her. A kind elderly woman, Mrs. Thompson, offered her a part-time job at the local bakery. Lily's dream began to take shape once again.
+
+With every penny she earned, Lily saved up to buy a new piano. It took years, but her dedication never wavered. Finally, the day arrived when Lily could purchase a beautiful piano of her own. The town, now a part of her journey, celebrated her triumph.
+
+Lily's story didn't end there. She went on to become a celebrated pianist, and her concerts echoed through the town, filling it with joy. The once-sad orphan had created a symphony of resilience, inspiring everyone around her.
+
+Moral:
+No matter how broken your past, with determination and the support of those who believe in you, you can turn the notes of sorrow into a melody of triumph. Life's challenges may sell off your dreams, but the symphony of resilience plays on as long as you are willing to compose it.
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
